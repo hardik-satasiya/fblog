@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: app::lang.group.label
+
+# Model Form Field configuration
+form: ~/models/User/usergroup/fields.yaml
+
+# Model Class name
+modelClass: HS\Models\User\UserGroup
+
+# Default redirect location
+defaultRedirect: admin/user/usergroups
+
+# Create page
+create:
+    title: app::lang.groups.create_title
+    redirect: admin/user/usergroups/update/:id
+    redirectClose: admin/user/usergroups
+
+# Update page
+update:
+    title: app::lang.groups.update_title
+    redirect: admin/user/usergroups
+    redirectClose: admin/user/usergroups
+
+# Preview page
+preview:
+    title: app::lang.groups.update_title

@@ -1,0 +1,11 @@
+itemcode: User
+permissions:
+    app.users.access_users:
+        tab: Fe Users
+        label: Access Users
+    app.users.access_groups:
+        tab: Fe Users
+        label: Access Groups
+    app.users.access_settings:
+        tab: Fe Users
+        label: Access Settings

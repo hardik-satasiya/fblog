@@ -1,0 +1,7 @@
+<h1>Hello This is default index Controller</h1>
+<?php if($this->user): ?>
+    <h2>And You are <?= $this->user->name ?> <?= $this->user->surname ?></h2>
+<?php else: ?>
+    <h2>And You are not logged in please login <a href="<?= Url::to('login') ?>">Login</a></h2>
+<?php endif; ?>
+<div id="app"></div>

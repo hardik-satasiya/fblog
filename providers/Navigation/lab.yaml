@@ -1,0 +1,6 @@
+navigation:
+    experiments:
+        label: Exprements
+        url: admin/lab/experiments
+        icon: icon-area-chart
+itemcode: lab

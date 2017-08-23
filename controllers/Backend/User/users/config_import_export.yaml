@@ -1,0 +1,10 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+export:
+    title: Export subscribers
+    modelClass: HS\Models\User\UserExport
+    list: ~/models/User/user/columns.yaml
+    redirect: admin/user/users
+    useList: true

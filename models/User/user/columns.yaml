@@ -1,0 +1,40 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: app::lang.user.id
+        invisible: true
+
+    username:
+        label: app::lang.user.username
+        searchable: true
+        invisible: true
+
+    name:
+        label: app::lang.user.name
+        searchable: true
+
+    surname:
+        label: app::lang.user.surname
+        searchable: true
+        invisible: true
+
+    email:
+        label: app::lang.user.email
+        searchable: true
+
+    created_at:
+        label: app::lang.user.created_at
+        type: timetense
+
+    last_seen:
+        label: app::lang.user.last_seen
+        type: timetense
+
+    is_guest:
+        label: app::lang.user.is_guest
+        type: switch
+        invisible: true

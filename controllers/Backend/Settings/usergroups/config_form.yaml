@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: backend::lang.user.group.name
+form: ~/modules/backend/models/usergroup/fields.yaml
+modelClass: Backend\Models\UserGroup
+defaultRedirect: admin/settings/usergroups
+
+create:
+    redirect: admin/settings/usergroups/update/:id
+    redirectClose: admin/settings/usergroups
+
+update:
+    redirect: admin/settings/usergroups
+    redirectClose: admin/settings/usergroups

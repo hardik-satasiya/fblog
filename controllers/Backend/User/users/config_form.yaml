@@ -1,0 +1,25 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: app::lang.user.label
+
+# Model Form Field configuration
+form: ~/models/User/user/fields.yaml
+
+# Model Class name
+modelClass: HS\Models\User\User
+
+# Default redirect location
+defaultRedirect: admin/user/users
+
+# Create page
+create:
+    redirect: admin/user/users/preview/:id
+    redirectClose: admin/user/users
+
+# Update page
+update:
+    redirect: admin/user/users/update/:id
+    redirectClose: admin/user/users/preview/:id
