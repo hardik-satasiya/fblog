@@ -17,7 +17,7 @@ class MailBlocker extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'mail_blockers';
+    public $table = 'user_mail_blockers';
 
     /**
      * @var array Guarded fields

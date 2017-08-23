@@ -2,7 +2,7 @@
 namespace HS\Controllers;
 
 use Route;
-use Auth;
+use FeAuth;
 use Flash;
 use Event;
 use BackendMenu;
@@ -42,7 +42,7 @@ class Login extends BaseController
 
     public function index()
     {
-        $user = Auth::getUser();
+        $user = FeAuth::getUser();
         $this->vars['user'] = $user;
         $this->vars['loginAttributeLabel'] = $this->loginAttribute();
     }
@@ -125,7 +125,7 @@ class Login extends BaseController
 
             Event::fire('app.user.beforeAuthenticate', [$this, $credentials]);
 
-            $user = Auth::authenticate($credentials, true);
+            $user = FeAuth::authenticate($credentials, true);
 
             /*
              * Redirect to the intended page after successful sign in
@@ -184,7 +184,7 @@ class Login extends BaseController
             $requireActivation = UserSettings::get('require_activation', true);
             $automaticActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_AUTO;
             $userActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_USER;
-            $user = Auth::register($data, $automaticActivation);
+            $user = FeAuth::register($data, $automaticActivation);
 
             /*
              * Activation is by the user, send the email
@@ -198,7 +198,7 @@ class Login extends BaseController
              * Automatically activated or not required, log the user in
              */
             if ($automaticActivation || !$requireActivation) {
-                Auth::login($user);
+                FeAuth::login($user);
             }
 
             if ($redirectUrl = post('redirect', 'index')) {
@@ -228,9 +228,9 @@ class Login extends BaseController
      */
     public function logout()
     {
-        $user = Auth::getUser();
+        $user = FeAuth::getUser();
 
-        Auth::logout();
+        FeAuth::logout();
 
         if ($user) {
             Event::fire('app.user.logout', [$user]);
@@ -254,9 +254,9 @@ class Login extends BaseController
      */
     public function onLogout()
     {
-        $user = Auth::getUser();
+        $user = FeAuth::getUser();
 
-        Auth::logout();
+        FeAuth::logout();
 
         if ($user) {
             Event::fire('app.user.logout', [$user]);
@@ -291,7 +291,7 @@ class Login extends BaseController
 
             list($userId, $code) = $parts;
 
-            if (!strlen(trim($userId)) || !($user = Auth::findUserById($userId))) {
+            if (!strlen(trim($userId)) || !($user = FeAuth::findUserById($userId))) {
                 throw new ApplicationException(Lang::get('app::lang.account.invalid_user'));
             }
 
@@ -304,7 +304,7 @@ class Login extends BaseController
             /*
              * Sign in the user
              */
-            Auth::login($user);
+            FeAuth::login($user);
         } catch (Exception $ex) {
             if (Request::ajax()) {
                 throw $ex;
@@ -319,7 +319,7 @@ class Login extends BaseController
      */
     public function onUpdate()
     {
-        if (!$user = Auth::getUser()) {
+        if (!$user = FeAuth::getUser()) {
             return;
         }
 
@@ -330,7 +330,7 @@ class Login extends BaseController
          * Password has changed, reauthenticate the user
          */
         if (strlen(post('password'))) {
-            Auth::login($user->reload(), true);
+            FeAuth::login($user->reload(), true);
         }
 
         Flash::success(post('flash', Lang::get('app::lang.account.success_saved')));
@@ -348,7 +348,7 @@ class Login extends BaseController
      */
     public function onDeactivate()
     {
-        if (!$user = Auth::getUser()) {
+        if (!$user = FeAuth::getUser()) {
             return;
         }
 
@@ -357,7 +357,7 @@ class Login extends BaseController
         }
 
         $user->delete();
-        Auth::logout();
+        FeAuth::logout();
 
         Flash::success(post('flash', Lang::get('app::lang.account.success_deactivation')));
 
@@ -375,7 +375,7 @@ class Login extends BaseController
     public function onSendActivationEmail()
     {
         try {
-            if (!$user = Auth::getUser()) {
+            if (!$user = FeAuth::getUser()) {
                 throw new ApplicationException(Lang::get('app::lang.account.login_first'));
             }
 
@@ -484,7 +484,7 @@ class Login extends BaseController
 
         list($userId, $code) = $parts;
 
-        if (!strlen(trim($userId)) || !($user = Auth::findUserById($userId))) {
+        if (!strlen(trim($userId)) || !($user = FeAuth::findUserById($userId))) {
             throw new ApplicationException(trans('app::lang.account.invalid_user'));
         }
 

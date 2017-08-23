@@ -1,7 +1,7 @@
 <?php namespace HS\Models\User;
 
 use Str;
-use Auth;
+use FeAuth;
 use Mail;
 use Event;
 use October\Rain\Auth\Models\User as UserBase;
@@ -294,7 +294,7 @@ class User extends UserBase
      */
     public function ban()
     {
-        Auth::findThrottleByUserId($this->id)->ban();
+        FeAuth::findThrottleByUserId($this->id)->ban();
     }
 
     /**
@@ -303,7 +303,7 @@ class User extends UserBase
      */
     public function unban()
     {
-        Auth::findThrottleByUserId($this->id)->unban();
+        FeAuth::findThrottleByUserId($this->id)->unban();
     }
 
     /**
@@ -312,7 +312,7 @@ class User extends UserBase
      */
     public function isBanned()
     {
-        $throttle = Auth::createThrottleModel()->where('user_id', $this->id)->first();
+        $throttle = FeAuth::createThrottleModel()->where('user_id', $this->id)->first();
         return $throttle ? $throttle->is_banned : false;
     }
 
