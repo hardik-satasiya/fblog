@@ -12,15 +12,11 @@ class Index extends BaseController
 
     public $implement = [ ];
 
-
-
     public function __construct()
     {
     	// assets correction
     	$this->assetPath = '/assets';
-
         parent::__construct();
-
         BackendMenu::setContext('HS.Backend','dashboard');
     }
 

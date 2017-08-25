@@ -182,9 +182,11 @@ class Controller extends Extendable
         /*
          * Media Manager widget is available on all back-end pages
          */
-        if (class_exists('Cms\Widgets\MediaManager')) {
-            $manager = new MediaManager($this, 'ocmediamanager');
-            $manager->bindToController();
+        if (App::runningInBackend()) {
+            if (class_exists('Cms\Widgets\MediaManager')) {
+                $manager = new MediaManager($this, 'ocmediamanager');
+                $manager->bindToController();
+            }
         }
     }
 

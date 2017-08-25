@@ -1,6 +1,6 @@
 navigation:
-    experiments:
-        label: Exprements
-        url: admin/lab/experiments
-        icon: icon-area-chart
-itemcode: lab
+    items:
+        label: Fashion
+        url: admin/fashion/index
+        icon: icon-sun-o
+itemcode: fashion

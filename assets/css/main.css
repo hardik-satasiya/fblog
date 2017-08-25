@@ -1,0 +1,353 @@
+/* ===================================================
+// enhance
+// ===================================================*/
+body {
+    height: 3000px;
+}
+.fade.in {
+    opacity: 1;
+}
+
+/* ===================================================
+// header navigation
+// ===================================================*/
+.header_search_container i {
+    position: absolute;
+    top: 27px;
+    padding: 10px;
+    left: 10px;
+    width: 20px;
+}
+.header_search_container {
+    position: relative;
+    padding-right: 10px;
+}
+.header_search {
+    margin: 18px 0 0 0;
+    height: 36px;
+    border-radius: 30px;
+    padding-left: 35px;
+    width: 100px;
+    transition: width 500ms ease;
+}
+.navbar .navbar-nav .nav-item .nav-link.user_avatar {
+    padding: 0;
+    padding-top: 5px;
+}
+
+.user_avatar img {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+}
+
+.header_proxy {
+    height: 91px;
+}
+
+.navbar.main_nav,
+.header_proxy {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navbar.main_nav.navbar-onscroll {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.navbar.main_nav.navbar-onscroll.nav_zero {
+    top: -100%;
+}
+
+.navbar.main_nav {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+/* ===================================================
+// overrides
+// ===================================================*/
+.dropdown-menu {
+    background-color: #FFFFFF;
+}
+@media (min-width: 768px) {
+    .navbar-nav li .dropdown-menu:before, #dropdown-row .dropdown .dropdown-menu:before, .card.card-just-text .dropdown .dropdown-menu:before, .card-just-text .dropdown .dropdown-menu:before, .dropdown-btn .dropdown-menu:before{
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid rgba(0,0,0,0.15);
+    }
+}
+
+/* ===================================================
+// svg icons
+// ===================================================*/
+.hs_svg_icon {
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    background-size: cover;
+}
+.hs_svg_icon.icon_2x {
+    height: 24;
+    width: 24;
+}
+.hs_svg_icon.icon_3x {
+    height: 32;
+    width: 32;
+}
+.hs_svg_icon.icon_2x {
+    height: 48;
+    width: 48;
+}
+.hs_svg_icon.icon_archive-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/archive-2.svg);
+}
+
+.hs_svg_icon.icon_archive-paper {
+    background-image: url(/assets/static/img/icons/colored/48px/archive-paper.svg);
+}
+
+.hs_svg_icon.icon_award-48 {
+    background-image: url(/assets/static/img/icons/colored/48px/award-48.svg);
+}
+
+.hs_svg_icon.icon_badge-13 {
+    background-image: url(/assets/static/img/icons/colored/48px/badge-13.svg);
+}
+
+.hs_svg_icon.icon_bag-09 {
+    background-image: url(/assets/static/img/icons/colored/48px/bag-09.svg);
+}
+
+.hs_svg_icon.icon_barcode-qr {
+    background-image: url(/assets/static/img/icons/colored/48px/barcode-qr.svg);
+}
+
+.hs_svg_icon.icon_bear-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/bear-2.svg);
+}
+
+.hs_svg_icon.icon_bell-53 {
+    background-image: url(/assets/static/img/icons/colored/48px/bell-53.svg);
+}
+
+.hs_svg_icon.icon_bookmark-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/bookmark-2.svg);
+}
+
+.hs_svg_icon.icon_briefcase-24 {
+    background-image: url(/assets/static/img/icons/colored/48px/briefcase-24.svg);
+}
+
+.hs_svg_icon.icon_calendar-60 {
+    background-image: url(/assets/static/img/icons/colored/48px/calendar-60.svg);
+}
+
+.hs_svg_icon.icon_camera-20 {
+    background-image: url(/assets/static/img/icons/colored/48px/camera-20.svg);
+}
+
+.hs_svg_icon.icon_cart-simple {
+    background-image: url(/assets/static/img/icons/colored/48px/cart-simple.svg);
+}
+
+.hs_svg_icon.icon_chat-46 {
+    background-image: url(/assets/static/img/icons/colored/48px/chat-46.svg);
+}
+
+.hs_svg_icon.icon_check-circle-07 {
+    background-image: url(/assets/static/img/icons/colored/48px/check-circle-07.svg);
+}
+
+.hs_svg_icon.icon_cloud-26 {
+    background-image: url(/assets/static/img/icons/colored/48px/cloud-26.svg);
+}
+
+.hs_svg_icon.icon_compass-05 {
+    background-image: url(/assets/static/img/icons/colored/48px/compass-05.svg);
+}
+
+.hs_svg_icon.icon_dashboard-level {
+    background-image: url(/assets/static/img/icons/colored/48px/dashboard-level.svg);
+}
+
+.hs_svg_icon.icon_diamond {
+    background-image: url(/assets/static/img/icons/colored/48px/diamond.svg);
+}
+
+.hs_svg_icon.icon_edit-78 {
+    background-image: url(/assets/static/img/icons/colored/48px/edit-78.svg);
+}
+
+.hs_svg_icon.icon_email-84 {
+    background-image: url(/assets/static/img/icons/colored/48px/email-84.svg);
+}
+
+.hs_svg_icon.icon_eye-19 {
+    background-image: url(/assets/static/img/icons/colored/48px/eye-19.svg);
+}
+
+.hs_svg_icon.icon_favourite-31 {
+    background-image: url(/assets/static/img/icons/colored/48px/favourite-31.svg);
+}
+
+.hs_svg_icon.icon_flag-points-32 {
+    background-image: url(/assets/static/img/icons/colored/48px/flag-points-32.svg);
+}
+
+.hs_svg_icon.icon_flash-21 {
+    background-image: url(/assets/static/img/icons/colored/48px/flash-21.svg);
+}
+
+.hs_svg_icon.icon_folder-15 {
+    background-image: url(/assets/static/img/icons/colored/48px/folder-15.svg);
+}
+
+.hs_svg_icon.icon_gift-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/gift-2.svg);
+}
+
+.hs_svg_icon.icon_grid-45 {
+    background-image: url(/assets/static/img/icons/colored/48px/grid-45.svg);
+}
+
+.hs_svg_icon.icon_handout {
+    background-image: url(/assets/static/img/icons/colored/48px/handout.svg);
+}
+
+.hs_svg_icon.icon_heart-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/heart-2.svg);
+}
+
+.hs_svg_icon.icon_home-52 {
+    background-image: url(/assets/static/img/icons/colored/48px/home-52.svg);
+}
+
+.hs_svg_icon.icon_image {
+    background-image: url(/assets/static/img/icons/colored/48px/image.svg);
+}
+
+.hs_svg_icon.icon_key-25 {
+    background-image: url(/assets/static/img/icons/colored/48px/key-25.svg);
+}
+
+.hs_svg_icon.icon_layers-3 {
+    background-image: url(/assets/static/img/icons/colored/48px/layers-3.svg);
+}
+
+.hs_svg_icon.icon_like-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/like-2.svg);
+}
+
+.hs_svg_icon.icon_link-72 {
+    background-image: url(/assets/static/img/icons/colored/48px/link-72.svg);
+}
+
+.hs_svg_icon.icon_lock {
+    background-image: url(/assets/static/img/icons/colored/48px/lock.svg);
+}
+
+.hs_svg_icon.icon_lock-open {
+    background-image: url(/assets/static/img/icons/colored/48px/lock-open.svg);
+}
+
+.hs_svg_icon.icon_multiple-11 {
+    background-image: url(/assets/static/img/icons/colored/48px/multiple-11.svg);
+}
+
+.hs_svg_icon.icon_notes {
+    background-image: url(/assets/static/img/icons/colored/48px/notes.svg);
+}
+
+.hs_svg_icon.icon_pencil {
+    background-image: url(/assets/static/img/icons/colored/48px/pencil.svg);
+}
+
+.hs_svg_icon.icon_phone-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/phone-2.svg);
+}
+
+.hs_svg_icon.icon_preferences {
+    background-image: url(/assets/static/img/icons/colored/48px/preferences.svg);
+}
+
+.hs_svg_icon.icon_send-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/send-2.svg);
+}
+
+.hs_svg_icon.icon_settings-gear-63 {
+    background-image: url(/assets/static/img/icons/colored/48px/settings-gear-63.svg);
+}
+
+.hs_svg_icon.icon_single-01 {
+    background-image: url(/assets/static/img/icons/colored/48px/single-01.svg);
+}
+
+.hs_svg_icon.icon_single-folded-content {
+    background-image: url(/assets/static/img/icons/colored/48px/single-folded-content.svg);
+}
+
+.hs_svg_icon.icon_skull-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/skull-2.svg);
+}
+
+.hs_svg_icon.icon_spaceship {
+    background-image: url(/assets/static/img/icons/colored/48px/spaceship.svg);
+}
+
+.hs_svg_icon.icon_square-download {
+    background-image: url(/assets/static/img/icons/colored/48px/square-download.svg);
+}
+
+.hs_svg_icon.icon_square-upload {
+    background-image: url(/assets/static/img/icons/colored/48px/square-upload.svg);
+}
+
+.hs_svg_icon.icon_support-16 {
+    background-image: url(/assets/static/img/icons/colored/48px/support-16.svg);
+}
+
+.hs_svg_icon.icon_trash-simple {
+    background-image: url(/assets/static/img/icons/colored/48px/trash-simple.svg);
+}
+
+.hs_svg_icon.icon_turtle {
+    background-image: url(/assets/static/img/icons/colored/48px/turtle.svg);
+}
+
+.hs_svg_icon.icon_vector {
+    background-image: url(/assets/static/img/icons/colored/48px/vector.svg);
+}
+
+.hs_svg_icon.icon_video-66 {
+    background-image: url(/assets/static/img/icons/colored/48px/video-66.svg);
+}
+
+.hs_svg_icon.icon_wallet-43 {
+    background-image: url(/assets/static/img/icons/colored/48px/wallet-43.svg);
+}
+
+.hs_svg_icon.icon_widget {
+    background-image: url(/assets/static/img/icons/colored/48px/widget.svg);
+}
+
+.hs_svg_icon.icon_world {
+    background-image: url(/assets/static/img/icons/colored/48px/world.svg);
+}
+
+.hs_svg_icon.icon_zoom-2 {
+    background-image: url(/assets/static/img/icons/colored/48px/zoom-2.svg);
+}
+
+
+/* ===================================================
+// Popup
+// ===================================================*/
+.popup-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: rgba(0,0,0,0.2);
+}

@@ -12,16 +12,12 @@ class Index extends BaseController
 {
 
     public $implement = [ ];
-
-
-
     public function __construct()
     {
     	// assets correction
     	$this->assetPath = '/assets';
-
         parent::__construct();
-
+        $this->bodyClass = 'normal-container';
         // BackendMenu::setContext('index','index','test');
     }
 
@@ -30,8 +26,5 @@ class Index extends BaseController
 
         // otehr code
         $this->addJs('js/main.js');
-        $this->addCss('css/main.css');
-
-        $this->bodyClass = 'compact-container';
     }
 }

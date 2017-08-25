@@ -1,6 +1,0 @@
-navigation:
-    plugin-builder:
-        label: Plugin Builder
-        url: admin/builder/index
-        icon: icon-area-chart
-itemcode: plugin-builder

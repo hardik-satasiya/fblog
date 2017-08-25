@@ -7,6 +7,7 @@ use Auth;
 use View;
 use Config;
 use Response;
+use Request;
 use Exception;
 use Illuminate\Routing\Controller as ControllerBase;
 use October\Rain\Router\Helper as RouterHelper;
@@ -89,12 +90,20 @@ class FrontendController extends ControllerBase
         }
 
         /*
-         * Database check
+         * global ajax fixing
+         * data-handler="ajaxResponder::onLoginPopup<-Login"
+         * ajaxResponder::[onAction]<-[Controller]
          */
-        if (!App::hasDatabase()) {
-            return Config::get('app.debug', false)
-                ? Response::make(View::make('backend::no_database'), 200)
-                : App::make('Cms\Classes\Controller')->run($url);
+        if (Request::ajax() && $handler = Request::header('X_OCTOBER_REQUEST_HANDLER')) {
+
+            if(Str::startsWith($handler, 'ajaxResponder::')) {
+                $handlerParams = explode('::', $handler);
+                $handlerParams = explode('<-', $handlerParams[1]);
+                $newHandler = $handlerParams[0];
+                $newController = $handlerParams[1];
+                Request::instance()->headers->set('X_OCTOBER_REQUEST_HANDLER', $newHandler);
+                $params[0] = $newController;
+            }
         }
 
         /*

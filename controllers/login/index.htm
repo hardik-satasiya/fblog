@@ -1,24 +1,25 @@
-<?php if(!$user): ?>
-    <div class="row">
+<div class="container">
+    <?php if(!$user): ?>
+        <div class="row">
 
-        <div class="col-md-6">
-            <h3>Sign in</h3>
-            <?= $this->makePartial('signin') ?>
+            <div class="col-md-6">
+                <h3>Sign in</h3>
+                <?= $this->makePartial('signin') ?>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Register</h3>
+                <?= $this->makePartial('register') ?>
+            </div>
+
         </div>
+    <?php else: ?>
 
-        <div class="col-md-6">
-            <h3>Register</h3>
-            <?= $this->makePartial('register') ?>
-        </div>
+        <?= $this->makePartial('activation_check') ?>
 
-    </div>
-<?php else: ?>
+        <?= $this->makePartial('update') ?>
 
-    <?= $this->makePartial('activation_check') ?>
+        <?= $this->makePartial('deactivate_link') ?>
 
-    <?= $this->makePartial('update') ?>
-
-    <?= $this->makePartial('deactivate_link') ?>
-
-<?php endif; ?>
-
+    <?php endif; ?>
+</div>
