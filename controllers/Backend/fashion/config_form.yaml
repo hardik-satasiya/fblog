@@ -1,0 +1,25 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: app::lang.user.label
+
+# Model Form Field configuration
+form: ~/models/Fashion/fashionmaster/fields.yaml
+
+# Model Class name
+modelClass: HS\Models\Fashion\FashionMaster
+
+# Default redirect location
+defaultRedirect: admin/fashion/index
+
+# Create page
+create:
+    redirect: admin/fashion/index
+    redirectClose: admin/fashion/index
+
+# Update page
+update:
+    redirect: admin/fashion/update/:id
+    redirectClose: admin/fashion/update/:id

@@ -1,0 +1,48 @@
+/* ===================================================
+// user setttings
+// ===================================================*/
+.user_area {
+    margin-top: 20px;
+}
+.user_area  .top_tabs .nav-tabs-wrapper{
+    margin-left: -16px;
+}
+
+.user_area .top_tabs.col-md-12 {
+    padding: 0;
+}
+.user_area .nav-tabs-navigation {
+    margin-bottom: 0;
+}
+.user_area .nav-tabs-navigation {
+    text-align: left;
+}
+.side_nav_user_settings {
+    border-right: 1px solid #F1EAE0;
+}
+
+.row .nav-tabs-navigation {
+    border-bottom: 1px solid #F1EAE0;
+}
+
+#user_area_tabs [class^="col-"] {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.side_nav_user_settings .nav-item {
+    padding: 5px 30px;
+    margin: 10px 0px;
+}
+.side_nav_user_settings_inner .nav-item.active {
+    border-left: 4px solid #6BD098;
+}
+
+.side_nav_user_settings .nav-link {
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+    margin-top: 3px;
+    padding-left: 10px;
+    font-weight: normal;
+}
+

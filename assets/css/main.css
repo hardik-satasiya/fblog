@@ -1,12 +1,32 @@
 /* ===================================================
 // enhance
 // ===================================================*/
-body {
-    height: 3000px;
+/* stiky footer */
+html {
+  position: relative;
+  min-height: 100%;
 }
+body {
+  padding-bottom: 86px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 86px;
+  border-top: 1px solid #F1EAE0;
+}
+/* stiky footer */
+
+
 .fade.in {
     opacity: 1;
 }
+.no-padding {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
 
 /* ===================================================
 // header navigation
@@ -87,16 +107,16 @@ body {
     background-size: cover;
 }
 .hs_svg_icon.icon_2x {
-    height: 24;
-    width: 24;
+    height: 24px;
+    width: 24px;
 }
 .hs_svg_icon.icon_3x {
-    height: 32;
-    width: 32;
+    height: 32px;
+    width: 32px;
 }
-.hs_svg_icon.icon_2x {
-    height: 48;
-    width: 48;
+.hs_svg_icon.icon_4x {
+    height: 48px;
+    width: 48px;
 }
 .hs_svg_icon.icon_archive-2 {
     background-image: url(/assets/static/img/icons/colored/48px/archive-2.svg);

@@ -1,0 +1,16 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: Title
+        span: auto
+
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug

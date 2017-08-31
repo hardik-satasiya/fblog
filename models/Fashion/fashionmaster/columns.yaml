@@ -1,0 +1,18 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: Id
+        invisible: true
+
+    title:
+        label: Title
+        searchable: true
+        invisible: true
+
+    slug:
+        label: Slug
+        searchable: true

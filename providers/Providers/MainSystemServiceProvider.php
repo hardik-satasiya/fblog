@@ -55,6 +55,7 @@ class MainSystemServiceProvider extends ModuleServiceProvider
 		$this->registerModulesLanguageViewsAndConfig();
 		$this->registerHelpers();
 		$this->registerTwigParser();
+		$this->registerMarkupTags();
 		$this->registerMailer();
 		$this->registerMailTemplates();
 		$this->registerWidgets();
@@ -225,6 +226,55 @@ class MainSystemServiceProvider extends ModuleServiceProvider
 		// $this->app->alias('auth', \Illuminate\Contracts\Auth\Factory::class);
 		// echo "<pre/>";print_r(get_class_methods($alias));exit();
 	}
+
+	/*
+     * Register markup tags
+     */
+    protected function registerMarkupTags()
+    {
+        MarkupManager::instance()->registerCallback(function ($manager) {
+            $manager->registerFunctions([
+                // Functions
+                'input'          => 'input',
+                'post'           => 'post',
+                'get'            => 'get',
+                'link_to'        => 'link_to',
+                'link_to_asset'  => 'link_to_asset',
+                'link_to_route'  => 'link_to_route',
+                'link_to_action' => 'link_to_action',
+                'asset'          => 'asset',
+                'action'         => 'action',
+                'url'            => 'url',
+                'route'          => 'route',
+                'secure_url'     => 'secure_url',
+                'secure_asset'   => 'secure_asset',
+
+                // Classes
+                'str_*'          => ['Str', '*'],
+                'url_*'          => ['Url', '*'],
+                'html_*'         => ['Html', '*'],
+                'form_*'         => ['Form', '*'],
+                'form_macro'     => ['Form', '__call']
+            ]);
+
+            $manager->registerFilters([
+                // Classes
+                'slug'           => ['Str', 'slug'],
+                'plural'         => ['Str', 'plural'],
+                'singular'       => ['Str', 'singular'],
+                'finish'         => ['Str', 'finish'],
+                'snake'          => ['Str', 'snake'],
+                'camel'          => ['Str', 'camel'],
+                'studly'         => ['Str', 'studly'],
+                'trans'          => ['Lang', 'get'],
+                'transchoice'    => ['Lang', 'choice'],
+                'md'             => ['Markdown', 'parse'],
+                'md_safe'        => ['Markdown', 'parseSafe'],
+                'time_since'     => ['System\Helpers\DateTime', 'timeSince'],
+                'time_tense'     => ['System\Helpers\DateTime', 'timeTense'],
+            ]);
+        });
+    }
 
 	 /**
 	 * Register mail templating and settings override.

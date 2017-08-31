@@ -1,0 +1,10 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    created_date:
+        label: app::lang.user.created_at
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'

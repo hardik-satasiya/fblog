@@ -29,6 +29,7 @@
 
     <link href="<?= URL::asset('modules/system/assets/css/framework.extras.css') ?>" rel="stylesheet">
     <link href="<?= URL::asset('assets/css/main.css') ?>" rel="stylesheet">
+    <link href="<?= URL::asset('assets/css/theme.css') ?>" rel="stylesheet">
 
 <?= Block::placeholder('head') ?>
 <?php // echo $this->makeLayoutPartial('custom_styles'); ?>
@@ -37,7 +38,7 @@
     <!--    navbar come here          -->
     <nav class="navbar navbar-toggleable-md fixed-top main_nav" shrink-on-scroll="50" toggle-on-scroll="750">
         <div class="container">
-            <div class="navbar-translate">
+            <div class="navbar-translate row">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     <span class="navbar-toggler-icon"></span>
@@ -158,6 +159,27 @@
 
     <!-- Flash Messages -->
     <div id="layout-flash-messages"><?= $this->makeLayoutPartial('frontend/flash_messages') ?></div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="https://www.creative-tim.com">Creative Tim</a></li>
+                        <li><a href="http://blog.creative-tim.com">Blog</a></li>
+                        <li><a href="https://www.creative-tim.com/license">Licenses</a></li>
+                    </ul>
+                </nav>
+                <div class="credits ml-auto">
+                    <span class="copyright">
+                        © <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script>document.write(new Date().getFullYear())</script>2017, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 <!-- Core JS Files -->
