@@ -1,6 +1,6 @@
 // navigation tricks
+var hs = hs || {};
 (function($){
-    var hs = hs || {};
     $(document).ready(function() {
 
         // for height of scrollbar
@@ -11,11 +11,14 @@
                 if(bigNav) {
                     bigNav = false;
                     $('.navbar[shrink-on-scroll]').addClass('navbar-onscroll');
+                    $('.navbar[shrink-on-scroll]').removeClass('main-navbar-transparent');
                 }
             } else {
                 if( !bigNav ) {
                     bigNav = true;
                     $('.navbar[shrink-on-scroll]').removeClass('navbar-onscroll');
+                    $('.navbar[shrink-on-scroll]').addClass('main-navbar-transparent');
+
                 }
             }
         }, 17);
@@ -57,6 +60,15 @@
         }
         if($('.navbar[toggle-on-scroll]').length != 0){
             $(window).on('scroll', hs.checkScrollForToggleNavbar);
+        }
+
+        hs.removeTopNotificaiton = function(event) {
+            var current = event.target;
+            $('body').removeClass('has-top-notification');
+            $(current).parents('.top_notification').slideUp("fast", function() {
+                // Animation complete.
+                $(this).remove();
+            });
         }
     });
 })(jQuery);

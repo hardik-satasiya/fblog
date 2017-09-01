@@ -19,5 +19,13 @@ class FashionMaster extends Model
         'slug' => 'required|between:3,64',
     ];
 
+    public $attachOne = [
+        'feature_image' => 'System\Models\File'
+    ];
+
+    public $attachMany = [
+        'topic_images' => ['System\Models\File', 'order' => 'sort_order']
+    ];
+
 
 }

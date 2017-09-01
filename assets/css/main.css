@@ -7,7 +7,7 @@ html {
   min-height: 100%;
 }
 body {
-  padding-bottom: 86px;
+  padding-bottom: calc(86px + 25px);
 }
 .footer {
   position: absolute;
@@ -17,7 +17,9 @@ body {
   border-top: 1px solid #F1EAE0;
 }
 /* stiky footer */
-
+.checkbox label::before, .checkbox label::after {
+    background-color: #6bd098;
+}
 
 .fade.in {
     opacity: 1;
@@ -27,10 +29,153 @@ body {
     padding-left: 0 !important;
 }
 
+/* ===================================================
+// top notification
+// ===================================================*/
+.has-top-notification .fixed-top {
+    top: 49px;
+}
+.has-top-notification.with_subnav .header_proxy {
+    height: calc(130px + 49px);
+}
+.top_notification .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top_notification .container .nc-icon {
+    color: white;
+    font-weight: 900;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+}
+
+.top_notification {
+    height: 49px;
+    position: fixed;
+    top: 0;
+    z-index: 1040;
+    width: 100%;
+    text-align: center;
+    line-height: 1.6;
+    padding: 10px 15px;
+}
+.top_notification a {
+    color: #ffffff;
+    font-weight: 600;
+    opacity: .8;
+    font-size: 12px;
+    text-transform: uppercase;
+    flex: 1;
+    display: flex;
+}
 
 /* ===================================================
 // header navigation
 // ===================================================*/
+/* sub-nav */
+.main_subnav {
+    padding: 5px 0px;
+    margin: 0 auto;
+    display: inline-block;
+}
+.main_subnav .navbar-nav .nav-item .nav-link {
+    margin: 0;
+    color: #ffffff;
+}
+.main_subnav .navbar-nav .btn {
+    margin: 3px;
+}
+
+.with_subnav .header_proxy {
+    height: 130px;
+}
+
+.main_subnav_container {
+    display: none;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.with_subnav .main_subnav_container {
+    display: block;
+}
+
+.main_subnav_container .nav-item {
+    z-index: 1;
+}
+
+.main_subnav_container::before {
+    background-image: -webkit-linear-gradient(left, rgb(21, 21, 21), rgb(21, 21, 21));
+    background-image: -o-linear-gradient(left, rgb(21, 21, 21), rgb(21, 21, 21));
+    background-image: linear-gradient(to right, rgb(21, 21, 21), rgb(21, 21, 21));
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgb(21, 21, 21), rgb(21, 21, 21));
+    opacity: 0.3;
+    content: "";
+    transition: opacity .3s ease;
+}
+
+
+.with_subnav .navbar.main_nav.navbar-onscroll.nav_zero {
+    transform: translatey(calc(-130px + 49px));
+}
+
+/* main-nav */
+/*===============================================*/
+.main_nav_container {
+    width: 100%;
+    background: #FFFFFF;
+}
+.main_nav_container,
+.header_proxy {
+    padding-top: 10px;
+}
+
+.navbar {
+    background: transparent;
+}
+.main_nav_container > .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.main_nav {
+    display: flex;
+    flex-direction: column;
+}
+
+  padding-top: 10px;
+}
+.navbar.main_nav.navbar-onscroll {
+    /*padding-top: 0px;*/
+    /*padding-bottom: 0px;*/
+}
+
+.body-transparent-header .main-navbar-transparent {
+
+    background: transparent !important;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+}
 .header_search_container i {
     position: absolute;
     top: 27px;
@@ -46,6 +191,7 @@ body {
     margin: 18px 0 0 0;
     height: 36px;
     border-radius: 30px;
+    border: 0;
     padding-left: 35px;
     width: 100px;
     transition: width 500ms ease;
@@ -54,7 +200,6 @@ body {
     padding: 0;
     padding-top: 5px;
 }
-
 .user_avatar img {
     border-radius: 50%;
     height: 32px;
@@ -65,22 +210,16 @@ body {
     height: 91px;
 }
 
-.navbar.main_nav,
-.header_proxy {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.navbar.main_nav.navbar-onscroll {
+
+
+.navbar.main_nav.navbar-onscroll.nav_zero {
     padding-top: 0px;
     padding-bottom: 0px;
 }
-.navbar.main_nav.navbar-onscroll.nav_zero {
-    top: -100%;
-}
 
 .navbar.main_nav {
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
 }
 
 /* ===================================================

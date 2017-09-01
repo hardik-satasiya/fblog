@@ -4,3 +4,4 @@ storage
 composer.lock
 node_modules
 extra
+assets/static/img

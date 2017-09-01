@@ -7,6 +7,7 @@ use BackendMenu;
 use Response;
 
 use HS\Controllers\BaseController;
+use HS\Models\Fashion\FashionMaster;
 
 class Index extends BaseController
 {
@@ -23,8 +24,12 @@ class Index extends BaseController
 
     public function index()
     {
+        $this->vars['fashionItems'] = FashionMaster::orderBy('created_at', 'desc')->get()->all();
+        // dd($this->vars['fashionItems']);
 
         // otehr code
-        $this->addJs('js/main.js');
+        // $this->addJs('js/main.js');
+
+        //
     }
 }
