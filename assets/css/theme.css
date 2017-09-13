@@ -1,16 +1,11 @@
 /* ===================================================
 // general
 // ===================================================*/
-@media (min-width: 576px) {
-    .main-items-grid .card-columns {
-        -webkit-column-count: 4;
-        -moz-column-count: 4;
-        column-count: 4;
-        -webkit-column-gap: 1.25rem;
-        -moz-column-gap: 1.25rem;
-        column-gap: 1.25rem;
-    }
+#slides-collection {
+    background-color: black;
 }
+
+
 /* ===================================================
 // user setttings
 // ===================================================*/
@@ -62,19 +57,43 @@
 /* ===================================================
 // cards
 // ===================================================*/
-.card {
+.main-items-grid .card {
     z-index: initial;
-
     display: inline-block;
     position: relative;
-    width: 100%;
-    margin-bottom: 30px;
-    border-radius: 6px;
+    float: left;
+    width: 24%;
+    margin-right: 1%;
+    height: 262px;
+    margin-bottom: 10px;
     color: rgba(0, 0, 0, 0.87);
     background: #fff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 0;
+    box-shadow: none;
 }
-.card:not(.card-plain):hover {
+.main-items-grid .card-columns-custom {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-items-grid .card.card-full {
+    width: 99%;
+}
+.main-items-grid .card h4 {
+    margin: 0;
+}
+
+.main-items-grid .card-blockquote .info {
+    margin-top: 10px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.main-items-grid .card:not(.card-plain):hover {
+    box-shadow: none;
+    /*box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);*/
     transform: initial;
     -webkit-transform: initial;
     -ms-transform: initial;
@@ -84,36 +103,62 @@
     max-height: 250px;
     width :100%;
 }*/
-.card .card-image {
-    height: 60%;
+.main-items-grid .card .card-image {
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: -30px;
-    border-radius: 6px;
-    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    height: 197px;
+    /*border: 1px solid rgba(0,0,0,.125);*/
+    border-bottom: 0;
+}
+.card-blockquote .info {
+    height: 153px;
+    display: block;
+}
+.card .card-image {
+    position: relative;
+}
+
+.card .card-image .item-info h4{
+    color: #636c72;
+}
+.card .card-image .item-info {
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.9);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    color: #636c72;
+    transition: all .2s ease;
+}
+.card .card-image:hover .item-info {
+    display: block;
+    opacity: 1;
 }
 
 .card .card-image img {
-    width: 100%;
-    max-height: 243px;
-    border-radius: 6px;
+    width: auto;
+    /*max-width: 275px;*/
+    max-height: 197px;
     pointer-events: none;
+    border-radius: 0;
 }
 .card-blog.p-3 {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 .card-blog {
-    margin-top: 40px;
-    border-top: 1px solid rgba(0,0,0,.125);
-    border-left: 1px solid rgba(0,0,0,.125);
-    border-right: 1px solid rgba(0,0,0,.125);
+    /*border: 1px solid rgba(0,0,0,.125);*/
+    border: 0;
 }
 .card-blog .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 0;
+    border: 1px solid rgba(0,0,0,.125);
 }
 
 .card.card-primary {
@@ -124,7 +169,47 @@
     background-color: #6bd098;
     border-color: #6bd098;
 }
+.card-inverse .card-text{
+    height: 128px;
+    padding-top: 10px;
+}
 
 .card-success .btn-outline-neutral:hover, .card-success .btn-outline-neutral:focus {
     color: #6bd098;
+}
+
+/* ===================================================
+// media queries
+// ===================================================*/
+
+@media only screen
+   and (max-width : 1600px) {
+   /* Styles here */
+   .main-items-grid .card {
+        width: 24%;
+   }
+}
+
+@media only screen
+   and (max-width : 1200px) {
+   /* Styles here */
+   .main-items-grid .card {
+        width: 28.33%;
+   }
+}
+
+@media only screen
+   and (max-width : 768px) {
+   /* Styles here */
+   .main-items-grid .card {
+        width: 49%;
+   }
+}
+
+@media only screen
+   and (max-width : 320px) {
+   /* Styles here */
+   .main-items-grid .card {
+        width: 99%;
+   }
 }

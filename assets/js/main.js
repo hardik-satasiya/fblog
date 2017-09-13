@@ -4,24 +4,23 @@ var hs = hs || {};
     $(document).ready(function() {
 
         // for height of scrollbar
-        var bigNav = true;
+        // var bigNav = true;
         hs.checkScrollForToggleHeight = debounce(function() {
             var st = $(document).scrollTop();
             if(st > $(".navbar").attr("shrink-on-scroll") ) {
-                if(bigNav) {
-                    bigNav = false;
+                // if(bigNav) {
+                    // bigNav = false;
                     $('.navbar[shrink-on-scroll]').addClass('navbar-onscroll');
                     $('.navbar[shrink-on-scroll]').removeClass('main-navbar-transparent');
-                }
+                // }
             } else {
-                if( !bigNav ) {
-                    bigNav = true;
+                // if( !bigNav ) {
+                    // bigNav = true;
                     $('.navbar[shrink-on-scroll]').removeClass('navbar-onscroll');
                     $('.navbar[shrink-on-scroll]').addClass('main-navbar-transparent');
-
-                }
+                // }
             }
-        }, 17);
+        }, 1);
 
 
         // hide show scrollbar on scroll
@@ -70,5 +69,9 @@ var hs = hs || {};
                 $(this).remove();
             });
         }
+
+        // tirgger default events
+        hs.checkScrollForToggleHeight();
+        hs.checkScrollForToggleNavbar();
     });
 })(jQuery);

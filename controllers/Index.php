@@ -18,7 +18,7 @@ class Index extends BaseController
     	// assets correction
     	$this->assetPath = '/assets';
         parent::__construct();
-        $this->bodyClass = 'normal-container';
+        $this->bodyClass = 'normal-container with_subnav has-transparent-header';
         // BackendMenu::setContext('index','index','test');
     }
 
@@ -28,7 +28,9 @@ class Index extends BaseController
         // dd($this->vars['fashionItems']);
 
         // otehr code
-        // $this->addJs('js/main.js');
+        $this->addJs('third-party/cross-slider.js');
+        $this->addCss('third-party/cross-slider.css');
+        $this->addJs('js/fashion.js');
 
         //
     }

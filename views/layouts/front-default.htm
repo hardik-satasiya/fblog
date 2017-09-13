@@ -29,12 +29,13 @@
 
     <link href="<?= URL::asset('modules/system/assets/css/framework.extras.css') ?>" rel="stylesheet">
     <link href="<?= URL::asset('assets/css/main.css') ?>" rel="stylesheet">
+    <link href="<?= URL::asset('assets/css/svg-color-icon-set.css') ?>" rel="stylesheet">
     <link href="<?= URL::asset('assets/css/theme.css') ?>" rel="stylesheet">
-
+    <?= $this->makeAssets('css') ?>
 <?= Block::placeholder('head') ?>
 <?php // echo $this->makeLayoutPartial('custom_styles'); ?>
 </head>
-<?php // body can have class : has-top-notification :  with_subnav (already added)?>
+<?php // body can have class : has-transparent-header : has-top-notification :  with_subnav ?>
 <body class="<?= $this->bodyClass ?>">
 
     <!-- <div class="top_notification alert-info">
@@ -46,7 +47,7 @@
     </div> -->
 
     <!--    navbar come here          -->
-    <nav class="navbar navbar-toggleable-md fixed-top main_nav main-navbar-transparent" shrink-on-scroll="50" toggle-on-scroll="350">
+    <nav class="navbar navbar-toggleable-md fixed-top main_nav" shrink-on-scroll="50" toggle-on-scroll="350">
         <div class="main_nav_container">
             <div class="container">
                 <div class="navbar-translate row">
@@ -179,7 +180,7 @@
 
     <!-- end navbar  -->
     <div class="wrapper">
-        <!-- <div class="header_proxy"></div> -->
+        <?= strrpos($this->bodyClass, 'has-transparent-header') === false ?  '<div class="header_proxy"></div>' : ''?>
         <!-- content come here     -->
         <?= Block::placeholder('body') ?>
 
@@ -245,5 +246,5 @@ document.getElementsByTagName('html')[0].classList.remove('webgl');
 <!--  Paper Kit Initialization snd functons -->
 <script src="<?= URL::asset('assets/static/js/paper-kit.js?v=2.0.0') ?>"></script>
 <script src="<?= URL::asset('assets/js/main.js') ?>"></script>
-<?= $this->makeAssets() ?>
+<?= $this->makeAssets('js') ?>
 </html>
