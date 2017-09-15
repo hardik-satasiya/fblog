@@ -35,6 +35,7 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
         //CSS Classes
         active_slide: 'active',
         disabled_nav: 'disabled',
+        auto_rotate: false
       },
       options
     );
@@ -80,9 +81,11 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
     //show first slide on page load.
     slideIn();
 
-    setInterval(function() {         
-        $(settings.next_button).trigger('click');
-    }, settings.duration + 4000);
+    if(settings.auto_rotate) {
+      setInterval(function() {
+          $(settings.next_button).trigger('click');
+      }, settings.duration + 4000);
+    }
 
     function slideIn() {
 
@@ -114,8 +117,8 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
           if ($(slider).find("."+settings.active_slide).next(settings.slides).length == 0) {
             $(slider).children(":first").find('.right-half').css({'left' : '', 'right': ''});
             $(slider).children(":first").find('.left-half').css({'left' : '', 'right': ''});
-            $(slider).children(":first").attr('style', 'z-index: ' + 0).insertAfter($(slider).find("."+settings.active_slide));          
-            // 
+            $(slider).children(":first").attr('style', 'z-index: ' + 0).insertAfter($(slider).find("."+settings.active_slide));
+            //
           }
 
           //activate "Prev Slide" link
@@ -128,7 +131,7 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
             $(settings.next_button).addClass(settings.disabled_nav);
           }*/
       },settings.duration + 10)
-      
+
     }
 
     function slideOut() {
@@ -159,8 +162,8 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
           if ($(slider).find("."+settings.active_slide).prev(settings.slides).length == 0) {
             $(slider).children(":nth-last-child(2)").find('.right-half').css({'right' : '0%', 'left': ''});
             $(slider).children(":nth-last-child(2)").find('.left-half').css({'left': '0%', 'right': ''});
-            $(slider).children(":nth-last-child(2)").attr('style', 'z-index: 1; transform: scale(0.75); opacity: 0;').insertBefore($(slider).find("."+settings.active_slide));          
-            // 
+            $(slider).children(":nth-last-child(2)").attr('style', 'z-index: 1; transform: scale(0.75); opacity: 0;').insertBefore($(slider).find("."+settings.active_slide));
+            //
           }
 
           //activate "Next Slide" link
@@ -169,8 +172,8 @@ http://en.wikipedia.org/wiki/GNU_General_Public_License
           //deactivate "Prev Slide" link when first slide is reached
           if ($(slider).find("."+settings.active_slide).prev(settings.slides).length == 0) {
             $(settings.prev_button).addClass(settings.disabled_nav);
-          }*/   
-      },settings.duration + 10)      
+          }*/
+      },settings.duration + 10)
     }
 
     $(settings.next_button).on("click", function(e) {

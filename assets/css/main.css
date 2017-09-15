@@ -96,9 +96,8 @@ body {
 }
 
 /* ===================================================
-// header navigation
+// sub header navigation
 // ===================================================*/
-/* sub-nav */
 .main_subnav {
     padding: 5px 0px;
     margin: 0 auto;
@@ -111,8 +110,13 @@ body {
 .main_subnav .navbar-nav .btn {
     margin: 3px;
 }
+.navbar .navbar-nav .nav-item .nav-link {
+    opacity: 1;
+}
 
-
+/* ===================================================
+// header navigation
+// ===================================================*/
 .has-transparent-header .navbar .main_subnav_container::before {
     background-image: none;
 }
@@ -179,9 +183,9 @@ body {
 }
 
 .has-transparent-header .main_nav_container {
-    background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%);
-    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%);
-    background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%);
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
     /*background: transparent !important;*/
 }

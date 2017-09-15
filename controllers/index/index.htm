@@ -31,7 +31,6 @@
     </div>
 </div>
 <!-- <div class="header_proxy"></div> -->
-<br/>
 <div class="container-fluid">
     <dic class="row">
         <div class="col-md-12">
@@ -81,7 +80,7 @@
                                      ?>
                                     <?php foreach ($fashionItems as $key => $item): ?>
                                         <?php
-                                            $p3 = (in_array($key + 1,[2,5]) ? true: false);
+                                            $p3 = (in_array($key + 1,[]) ? true: false);
 
                                         ?>
                                         <?php
@@ -98,7 +97,6 @@
                                                             And You are not logged in please login <a href="<?= Url::to('login') ?>">Login</a>
                                                         <?php endif; ?>
                                                     </p>
-                                                    <br />
                                                     <button type="button" class="btn btn-outline-neutral btn-round">Goooo ! &nbsp; &gt;</button>
                                                 </div>
                                             </div>
@@ -108,7 +106,8 @@
                                             <?php if(!$p3): ?>
 
                                                 <?php if($item->feature_image): ?>
-                                                <div class="card-image" style="background-image:url(<?= $item->feature_image->getThumb(274, 197, ['mode' => 'crop']) ?>)">
+                                                <div class="link-to-go card-image" style="background-image:url(<?= $item->feature_image->getThumb(274, 197, ['mode' => 'crop']) ?>)">
+                                                    <a href="<?= URL::to('fashion/' . $item->slug) ?>"></a>
                                                 <?php else: ?>
                                                 <div class="card-image" style="background-image:url(http://placehold.it/400x400) ?>)">
                                                 <?php endif; ?>
@@ -125,7 +124,7 @@
                                                 <div class="card-footer">
                                                   <small class="text-muted">Last updated 3 mins ago</small>
                                                   <span class="text-center">
-                                                    <a href="<?= URL::to('details/' . $item->slug) ?>" class="btn btn-outline-success btn-round btn-sm">more &nbsp; &gt;</a>
+                                                    <a href="<?= URL::to('fashion/' . $item->slug) ?>" class="btn btn-outline-success btn-round btn-sm">more &nbsp; &gt;</a>
                                                   <span>
                                                 </div>
                                             <?php else: ?>

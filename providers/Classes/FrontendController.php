@@ -129,13 +129,21 @@ class FrontendController extends ControllerBase
 
                 if (class_exists($predicatedClass)) {
                     $predicatedControllerParams = array_slice($params, $i + 1);
+                    $backUpParams = $predicatedControllerParams;
                     $predicatedAction = array_shift($predicatedControllerParams);
                     if (empty($predicatedAction)) {
                         $predicatedAction = 'index';
                     }
+                    // if action not found then set index action and pass as params
+                    if(!method_exists($predicatedClass, $predicatedAction)) {
+                        // restore params and set default action to index
+                        $predicatedAction = 'index';
+                        $predicatedControllerParams = $backUpParams;
+                    }
                     $innerControllerFound = true;
                     break;
                 }
+
                 unset($paramClone[$i]);
             }
         }

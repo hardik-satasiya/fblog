@@ -56,9 +56,13 @@
                         <span class="navbar-toggler-icon"></span>
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= Url::to('/') ?>"><?= e(Backend\Models\BrandSetting::get('app_name')) ?></a>
+                    <a class="navbar-brand" href="<?= Url::to('/') ?>">
+                        <?= e(Backend\Models\BrandSetting::get('app_name')) ?>
+                        <!-- <i class="hs_svg_icon icon_bag-09" aria-hidden="true"></i> -->
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
                     <!-- <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Work in progress... <span class="sr-only">(current)</span></a>
