@@ -27,7 +27,7 @@
 		"php": ">=7.0",
 		"ext-mbstring": "*",
 		"ext-openssl": "*",
-		"october/rain": "dev-develop",
+		"october/rain": "1.0.x-dev",
 		"october/system": "dev-develop",
 		"october/backend": "dev-develop",
 		"october/cms": "dev-develop",
