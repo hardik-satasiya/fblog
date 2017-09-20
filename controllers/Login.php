@@ -58,6 +58,7 @@ class Login extends BaseController
      */
     public function onLoginPopup()
     {
+        sleep(2);
         return $this->makePartial('loginpopup');
     }
 

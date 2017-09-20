@@ -18,7 +18,7 @@ class Index extends BaseController
     	// assets correction
     	$this->assetPath = '/assets';
         parent::__construct();
-        $this->bodyClass = 'normal-container with_subnav has-transparent-header';
+        $this->bodyClass = 'normal-container has-transparent-header';
         // BackendMenu::setContext('index','index','test');
     }
 

@@ -54,7 +54,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="technologies">
+                       <!--  <div class="technologies">
                             <div class="mask">
                                 <img src="https://www.creative-tim.com/assets/icon-html-e05de3f70999d3ce94b9804b7e298026.jpg" alt="Icon html">
                             </div>
@@ -64,7 +64,7 @@
                             <div class="mask">
                                 <img src="https://www.creative-tim.com/assets/icon-bootstrap-7cec419b71f47386f443bd3fbfef2f7c.jpg" alt="Icon bootstrap">
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                                     <?php foreach ($fashionItems as $key => $item): ?>
                                         <?php
                                             $p3 = (in_array($key + 1,[]) ? true: false);
-
+                                            $verival = (in_array($key + 1,[]) ? true: false);
                                         ?>
                                         <?php
                                             if($key !== 0 && $key%8 === 0 && count($specialTopic) > 0):
@@ -101,7 +101,7 @@
                                                 </div>
                                             </div>
                                         <?php endif; ?>
-                                        <div class="card card-blog <?= $p3 ? 'card card-inverse card-success p-3 text-center' : ''?>">
+                                        <div class="card card-blog <?= $p3 ? 'card card-inverse card-success p-3 text-center' : ''?> <?= $verival ? 'card-vertical' : ''?>">
 
                                             <?php if(!$p3): ?>
 

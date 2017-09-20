@@ -200,6 +200,7 @@ body {
 
 .has-transparent-header .navbar-onscroll .main_nav_container {
     background: #FFFFFF !important;
+    padding-top: 0px;
 }
 
 .navbar {
@@ -358,4 +359,14 @@ body {
 }
 .nav-tabs.technologies .mask {
     height: 55px;
+}
+
+
+/* ===================================================
+// October Dropdown fix
+// ===================================================*/
+.dropdown.open .dropdown-menu {
+    transform: translate3d(0px, 0px, 0px);
+    visibility: visible !important;
+    opacity: 1;
 }

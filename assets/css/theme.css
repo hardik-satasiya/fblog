@@ -76,7 +76,10 @@
     box-shadow: none;
     border: 1px solid rgba(0,0,0,.125);
 }
-
+.main-items-grid .card.card-vertical {
+    height: 534px;
+    float: right;
+}
 
 .main-items-grid .card-columns-custom {
     display: flex;

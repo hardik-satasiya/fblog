@@ -39,7 +39,7 @@ var hs = hs || {};
             // console.log(prevScroll, st, direction);
 
             if(st > $(".navbar").attr("toggle-on-scroll") ) {
-                if(direction === 0) {
+                if(direction === 0 && $(".navbar").attr("up-scroll-show-start") < st) {
                     // when we scroll up we show title bar
                     $('.navbar[toggle-on-scroll]').removeClass('nav_zero');
                 }
