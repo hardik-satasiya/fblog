@@ -268,8 +268,19 @@ body {
 }
 
 .navbar.main_nav {
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
+
+    -webkit-transition: .5s;
+    -webkit-transition-property: initial;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-timing-function: initial;
+    -webkit-transition-delay: initial;
+
+    transition: .5s;
+    transition-property: initial;
+    transition-duration: 0.5s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+
 }
 
 /* ===================================================
