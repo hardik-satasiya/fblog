@@ -21,7 +21,7 @@ class Fashion extends BaseController
         $this->assetPath = '/assets';
 
         $this->addJs('js/fashion.js');
-        $this->bodyClass = 'normal-container has-transparent-header';
+        $this->bodyClass = 'normal-container';
         // BackendMenu::setContext('index','index','test');
     }
 

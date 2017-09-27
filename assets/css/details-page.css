@@ -1,10 +1,12 @@
 .details-image {
-    height: 300px;
+    height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: 30%;
-    position: relative;
+    position: absolute;
     margin-bottom: 30px;
+    opacity: .1;
+    width: 100%;
+    top: 0;
 }
 
 .details-image::before {
@@ -13,4 +15,120 @@
     height: 100%;
     width: 100%;
     position: absolute;
+}
+
+.iamge-details-left, .buy-details{
+
+}
+
+.poster-user-avatar {
+
+}
+
+.posted-details {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.poster-user-avatar img {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+.iamge-details-left {
+    border-right: 1px solid #F1EAE0;
+}
+
+.info-shares-container {
+    padding: 10px 0;
+    margin-top: 10px;
+    border-top: 1px solid #F1EAE0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-shares {
+    display: flex;
+}
+
+.info-share-btns i {
+    padding-bottom: 5px;
+}
+
+.info-share-btns {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 10px; */
+    border-right: 1px solid #F1EAE0;
+}
+
+.info-share-btns:last-child {
+    border-right: 0;
+}
+
+
+.upper-info {
+    border-bottom: 1px solid #F1EAE0;
+    min-height: 300px;
+}
+
+
+/*right-silde*/
+.rating-stars {
+    display: flex;
+
+}
+
+.rating-stars .rating-input {
+    padding-right: 10px;
+}
+
+.rating-input .ticked {
+    color: #FF9800;
+}
+
+.prising {
+    margin-bottom: 20px;
+}
+
+.prising-old {
+    color: rgba(158, 158, 158, 0.46);
+}
+
+.prising-new {
+    color: #F44336;
+}
+
+.buy-now {
+
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.similar-fashion {
+    display: flex;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: center;
+    border: 1px solid #F1EAE0;
+}
+
+.voter {
+    padding: 5px;
+}
+
+.voter .progress-container {
+    padding: 10px;
 }
